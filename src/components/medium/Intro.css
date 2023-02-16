@@ -1,0 +1,160 @@
+.Intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.introSection1 {
+  padding: 8rem 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.introSection1 p {
+  text-align: justify;
+  font-weight: 500;
+  color: #333333; 
+  letter-spacing: 1px;
+  margin-bottom: 30px; 
+}
+
+.introSection1 a {
+  text-decoration: none;
+  background-color: #784cfb;
+  padding: 0.6rem 1.2rem;
+  color: #ffffff;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: all 200ms;
+}
+.introSection1 a:hover {
+  background-color: #784cfb;
+  opacity: 0.9;
+}
+.introSection2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+:root {
+  --track-width: 6px;
+  --primary-color: #784cfb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.animation-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.animation-container img{
+    position: absolute;
+    top: -10.2%;
+    z-index: 1;
+    height: 25rem;
+    border-bottom-left-radius: 49% 61%;
+    border-bottom-right-radius: 49% 61%;
+}
+
+.inner,.middle,.outer {
+  border-radius: 50%;
+  border: var(--track-width) solid var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.outer {
+  height: 20rem;
+  aspect-ratio: 1/1;
+  animation: revolution 30s linear infinite;
+}
+
+.middle {
+  height: 15rem;
+  aspect-ratio: 1/1;
+  animation: revolution 20s linear infinite;
+}
+
+.inner {
+  height: 10rem;
+  aspect-ratio: 1/1;
+  animation: revolution 10s linear infinite;
+}
+
+.inner::before,
+.middle::before,
+.outer::before,
+.inner::after,
+.middle::after,
+.outer::after {
+  content: "";
+  height: 1.6rem;
+  aspect-ratio: 1/1;
+  background-color: #ffffff;
+  position: absolute;
+}
+.orbits::before,
+.orbits::after {
+  content: "";
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: var(--track-width) solid var(--primary-color);
+  position: absolute;
+}
+.orbits::before {
+  height: 4rem;
+}
+.orbits::after {
+  height: 5rem;
+}
+.outer::before {
+  left: -0.8rem;
+}
+.outer::after {
+  top: -0.8rem;
+}
+.middle::before {
+  bottom: -0.8rem;
+}
+.middle::after {
+  right: -0.8rem;
+}
+.inner::before {
+  top: -0.8rem;
+}
+.inner::after {
+  right: -0.8rem;
+}
+.orbits::before {
+  top: 0;
+  right: 0;
+}
+.orbits::after {
+  bottom: -1rem;
+  left: -1rem;
+}
+
+.orbits {
+  height: 25rem;
+  aspect-ratio: 1/1;
+  animation: revolution 40s linear infinite;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes revolution {
+  from {
+    rotate: 360deg;
+  }
+}

@@ -1,0 +1,16 @@
+@keyframes translate {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+.translate {
+  position: absolute;
+  animation-name: translate;
+  animation-duration: 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
